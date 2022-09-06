@@ -1,5 +1,7 @@
 # PilotFreight
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/TruRooms/pilot_freight/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/TruRooms/pilot_freight/tree/master)
+
 A simple wrapper to make the Pilot API accessbile in a more Ruby friendly way.
 Things like dates will be accepted as `Date` and parsed as such.
 
