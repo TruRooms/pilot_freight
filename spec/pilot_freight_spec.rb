@@ -5,7 +5,18 @@ RSpec.describe PilotFreight do
     expect(PilotFreight::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".configuration" do
+    context "No rails, no env, no config" do
+      it "has a blank config" do
+        expect(PilotFreight.configuration.user_name).to eq(nil)
+        expect(PilotFreight.configuration.password).to eq(nil)
+        expect(PilotFreight.configuration.env).to eq('development')
+      end
+    end
+    context "Rails, no env, no config" do
+      it "will use the rails env" do
+        expect(PilotFreight.configuration.user_name).to eq(nil)
+      end
+    end
   end
 end
