@@ -10,3 +10,4 @@
 # rspec failure tracking
 .rspec_status
 /spec/support/credentials.yml
+/spec/.byebug_history
