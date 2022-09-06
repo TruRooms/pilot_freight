@@ -11,6 +11,7 @@ require_relative "pilot_freight/client"
 require_relative "pilot_freight/xml"
 require_relative "pilot_freight/version"
 
+# A Ruby wrapper for the Pilot Freight XML API.
 module PilotFreight
   class Error < StandardError; end
   class InsufficientConfiguration < StandardError; end
@@ -22,7 +23,7 @@ module PilotFreight
     @@configuration ||= OpenStruct.new(
       user_name: ENV["PILOT_FREIGHT_USER_NAME"] || nil,
       password: ENV["PILOT_FREIGHT_PASSWORD"] || nil,
-      env: ENV['PILOT_FREIGHT_ENV'] || 'development'
+      env: ENV["PILOT_FREIGHT_ENV"] || "development"
     )
   end
 
@@ -35,11 +36,10 @@ module PilotFreight
   # based on which environment is specified
   # @return [String] The endpoint URL
   def self.endpoint
-    if configuration.env == 'production'
-      'http://edi.mfsclarity.com'
+    if configuration.env == "production"
+      "http://edi.mfsclarity.com"
     else
-      'http://demo.mfsclarity.com'
+      "http://demo.mfsclarity.com"
     end
   end
-
 end

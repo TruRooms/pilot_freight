@@ -10,7 +10,7 @@ RSpec.describe PilotFreight do
       it "has a blank config" do
         expect(PilotFreight.configuration.user_name).to eq(nil)
         expect(PilotFreight.configuration.password).to eq(nil)
-        expect(PilotFreight.configuration.env).to eq('development')
+        expect(PilotFreight.configuration.env).to eq("development")
       end
     end
     context "Rails, no env, no config" do

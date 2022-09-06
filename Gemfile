@@ -17,12 +17,12 @@ gem "nokogiri", "~> 1.11"
 
 gem "httparty", "~> 0.18"
 
-gem 'activesupport', '~> 6.0'
+gem "activesupport", "~> 6.0"
 
-gem 'simplecov', "~> 0.21", require: false, group: :test
+gem "simplecov", "~> 0.21", require: false, group: :test
 
-gem 'sinatra', "~> 2.2", require: false, group: :test
+gem "sinatra", "~> 2.2", require: false, group: :test
 
-gem 'webmock', "~> 3.18", require: false, group: :test
+gem "webmock", "~> 3.18", require: false, group: :test
 
-gem 'byebug', "~> 11.1", require: false, group: :test
+gem "byebug", "~> 11.1", require: false, group: :test

@@ -1,26 +1,24 @@
 # frozen_string_literal: true
 
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
 
 require "pilot_freight"
 
 require "byebug"
 
-require 'webmock/rspec'
+require "webmock/rspec"
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
-
   # Require everything in spec/support
-  Dir[File.expand_path("support/**/*.rb", __dir__)].each { |f| require f }
+  Dir[File.expand_path("support/**/*.rb", __dir__)].sort.each { |f| require f }
 
   # Optional env flag to run tests against the demo server
   if ENV["PILOT_FREIGHT_DEMO_ENDPOINT"]
     config.before(:suite) do
       PilotFreight.configure do |config|
-        
       end
     end
   else
@@ -28,7 +26,6 @@ RSpec.configure do |config|
       stub_request(:any, /demo.mfsclarity.com/).to_rack(FakeClarity)
     end
   end
-
 
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
